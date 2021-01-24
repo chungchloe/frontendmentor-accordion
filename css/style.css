@@ -1,0 +1,24 @@
+/***WARPPER***/
+#wrapper {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/**Accordion**/
+
+/*Accordion Function*/
+.answer {
+    /*hide answers*/ display: none;
+    /*add transition*/ transition: all, 1s;
+}
+input[type=checkbox]:checked + .answer {
+    /*show answers*/ display: block;
+    /*add transition*/ transition: all, 1s;
+}
+
+/*Accordion Styling*/
+.qna {
+    background: red;
+    margin: 10px;
+}
