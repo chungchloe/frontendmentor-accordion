@@ -9,6 +9,10 @@
         
         <!--Stylesheet-->
         <link rel="stylesheet" href="css/style.css">
+        
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 
         <!--Title-->
         <title>Frontend Mentor | FAQ Accordion Card</title>
@@ -17,10 +21,18 @@
     <body>
         <div id="wrapper">
             
+            <!--Illustration-->
+            <div id="illust" class="illust-wrap">
+                <span class="illust"></span>
+            </div>
+            
             <!--Accordion-->
             <div id="accordion" class="accordion">
-
+                
+                <h1>FAQ</h1>
+                
                 <div class="qna">
+                    <span class="new-checkbox"></span>
                     <label for="invitation">How many team members can I invite?</label>
                     <input type="checkbox" class="question" id="invitation" name="invitation">
                     <div id="invitation" class="answer">
@@ -28,13 +40,17 @@
                     </div>
                 </div>
                 
+                <span class="divider"></span>
+                
                 <div class="qna">
                     <label for="max-file-size">What is the maximum file upload size?</label>
                     <input type="checkbox" class="question" id="max-file-size" name="max-file-size">
                     <div id="max-file-size" class="answer">
-                        <p>No more than 2GB. All files in your account must fit your allotted storage space. No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                        <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
                     </div>
                 </div>
+                
+                <span class="divider"></span>
                 
                 <div class="qna">
                     <label for="reset-password">How do I reset my password?</label>
@@ -44,6 +60,8 @@
                     </div>
                 </div>
                 
+                <span class="divider"></span>
+                
                 <div class="qna">
                     <label for="subscription">Can I cancel my subscription?</label>
                     <input type="checkbox" class="question" id="subscription" name="subscription">
@@ -51,6 +69,8 @@
                         <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
                     </div>
                 </div>
+                
+                <span class="divider"></span>
                 
                 <div class="qna">
                     <label for="support">Do you provide additional support?</label>
@@ -60,14 +80,16 @@
                     </div>
                 </div>
                 
+                <span class="divider"></span>
+                
             </div><!--Accordion END-->
-
-            <div class="attribution">
-                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-                Coded by <a href="#">Your Name Here</a>.
-
-            </div>
             
         </div><!--Wrapper END-->
+        
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Your Name Here</a>.
+        </div>
+        
     </body>
 </html>
