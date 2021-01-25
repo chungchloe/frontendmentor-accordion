@@ -1,24 +1,86 @@
+/***HTML ELEMENTS***/
+html { height: 100%; }
+body {
+    background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%))no-repeat;
+    color: hsl(238, 29%, 16%);
+    font-family: 'Kumbh Sans', sans-serif;
+    line-height: 1.5;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: 0 auto;
+    display: flex; justify-content: center; align-content: center; align-items: center;
+    flex-direction: column;
+}
+h1 { font-size: 2rem; margin: 0 0 1em 0; }
+
 /***WARPPER***/
 #wrapper {
-    display: block;
-    margin: 0 auto;
+    /*center wrapper*/ /*display: block; margin: 0 auto;*/
+    display: flex; flex-direction: row;
+    width: 920px;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 
 /**Accordion**/
 
 /*Accordion Function*/
-.answer {
-    /*hide answers*/ display: none;
-    /*add transition*/ transition: all, 1s;
+.answer p {
+    /*hide answers*/ opacity: 0; height: 0; margin: 0;
 }
-input[type=checkbox]:checked + .answer {
-    /*show answers*/ display: block;
+input[type=checkbox]:checked + .answer p {
+    /*show answers*/ opacity: 1; height: 100%;
     /*add transition*/ transition: all, 1s;
 }
 
 /*Accordion Styling*/
-.qna {
-    background: red;
-    margin: 10px;
+/*accordion div*/
+.accordion {
+    padding: 75px 0 85px 2em;
+    position: relative;
+}
+/*checkbox styling*/
+input[type=checkbox] {
+    visibility: hidden; height: 12px;
+}
+/*new checkbox style*/
+.new-checkbox {
+    content: ''; display: block;
+    position: absolute; right: 0px;
+    background: url(../images/icon-arrow-down.svg)no-repeat;
+    background-size: 100%;
+    width: 12px; height: 12px;
+    transition: all, .5s;
+}
+input[type=checkbox]:checked input[type=checkbox]:after {
+    transform: rotate(180deg);
+}
+/*label when checked*/
+input[type=checkbox]:checked > label {
+    font-weight: 700;
+}
+label {
+    font-size: 1rem; font-weight: 400;
+    transition: all, .5s;
+}
+label:hover { color: hsl(14, 88%, 65%); cursor: pointer; }
+/*divider*/
+.divider {
+    display: block; margin: 1em 0;
+    background: hsl(240, 5%, 91%);
+    height: 1px; width: 100%;
+}
+
+/**Illustration**/
+.illust-wrap {
+    width: 45%;
+    background: url(../images/bg-pattern-desktop.svg)no-repeat;
+    background-size: cover;
+    background-position: -200px 30px;
+}
+.illust {
+    display: block;
+    background: url(../images/illustration-woman-online-desktop.svg);
+    width: 500px;
 }
