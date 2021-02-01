@@ -8,6 +8,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
         
         <!--Stylesheet-->
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         
         <!--Google Fonts-->
@@ -19,64 +20,69 @@
     </head>
     
     <body>
+        
+        <!--Wrapper-->
         <div id="wrapper">
             
-            <!--Illustration-->
-            <div id="illust" class="illust-wrap">
-                <span class="illust"></span>
-            </div>
+            <!--FAQ-->
+            <div id="faq" class="faq">
             
-            <!--Accordion-->
-            <div id="accordion" class="accordion">
+                <!--Illustration and Background-->
+                <div id="illust-wrap" class="illust-wrap">
+                    <img class="illust" src="images/illustration-woman-online-desktop.svg" alt="">
+                    <img class="illust-mobile" src="images/illustration-woman-online-mobile.svg" alt="">
+                </div>
+                
+                <!--Accordion-->
+                <div id="accordion" class="accordion">
                 
                 <h1>FAQ</h1>
                 
                 <div class="qna">
-                    <span class="new-checkbox"></span>
+                    <input type="radio" class="question" id="invitation" name="name">
                     <label for="invitation">How many team members can I invite?</label>
-                    <input type="checkbox" class="question" id="invitation" name="invitation">
                     <div id="invitation" class="answer">
-                        <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+                        You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.
                     </div>
                 </div>
                 
                 <span class="divider"></span>
                 
                 <div class="qna">
+                    <input type="radio" class="question" id="max-file-size" name="name">
                     <label for="max-file-size">What is the maximum file upload size?</label>
-                    <input type="checkbox" class="question" id="max-file-size" name="max-file-size">
                     <div id="max-file-size" class="answer">
-                        <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                        No more than 2GB. All files in your account must fit your allotted storage space.
                     </div>
                 </div>
                 
                 <span class="divider"></span>
                 
                 <div class="qna">
+                    <input type="radio" class="question" id="reset-password" name="name">
                     <label for="reset-password">How do I reset my password?</label>
-                    <input type="checkbox" class="question" id="reset-password" name="reset-password">
                     <div id="reset-password" class="answer">
-                        <p>Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+                        Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.
                     </div>
                 </div>
                 
                 <span class="divider"></span>
                 
                 <div class="qna">
+                    <input type="radio" class="question" id="subscription" name="name">
                     <label for="subscription">Can I cancel my subscription?</label>
-                    <input type="checkbox" class="question" id="subscription" name="subscription">
                     <div id="subscription" class="answer">
-                        <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+                        Yes! Send us a message and we’ll process your request no questions asked.
                     </div>
                 </div>
                 
                 <span class="divider"></span>
                 
                 <div class="qna">
+                    <input type="radio" class="question" id="support" name="name">
                     <label for="support">Do you provide additional support?</label>
-                    <input type="checkbox" class="question" id="support" name="support">
                     <div id="support" class="answer">
-                        <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                        Chat and email support is available 24/7. Phone lines are open during normal business hours.
                     </div>
                 </div>
                 
@@ -84,12 +90,14 @@
                 
             </div><!--Accordion END-->
             
+            </div><!--FAQ END-->
+            
+            <!--Attribution-->
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="http://www.chungchloe.com">Chloe Chung</a>.
+            </div>
+            
         </div><!--Wrapper END-->
-        
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#">Your Name Here</a>.
-        </div>
         
     </body>
 </html>
