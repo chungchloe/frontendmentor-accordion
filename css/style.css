@@ -78,7 +78,7 @@ body {
 }
 /*Heading*/
 h1 {
-    margin: 0 0 .5em .3em;
+    margin: 0 0 .5em .4em;
     font-size: 2rem; font-weight: 700;
 }
 /*Checkbox Styling*/
@@ -99,7 +99,7 @@ label::after {
     /*display content beside the label*/ display: inline-block;
     /*set width and height to display content*/ width: 10px; height: 7px;
     /*add arrow*/ background: url(../images/icon-arrow-down.svg)no-repeat;
-    /*rotate arrow*/ transform: rotate(-90deg);
+    /*rotate arrow*/ transform: rotate(180deg);
     /*add transition*/ transition: all, .5s;
     /*position arrows*/
     position: absolute; right: 4em;
@@ -136,7 +136,8 @@ input:checked ~ .answer {
 
 
 /**Attribution**/
-.attribution { text-align: center; width: 80%; }
+.attribution { text-align: center; width: 80%; color: #fff; }
+.attribution a { color: #fff; }
 
 
 
