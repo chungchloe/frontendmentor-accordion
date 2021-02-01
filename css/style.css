@@ -1,86 +1,230 @@
 /***HTML ELEMENTS***/
-html { height: 100%; }
+html {
+    /*set height to 100% to match wrapper height*/
+    height: 100%;
+}
 body {
-    background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%))no-repeat;
-    color: hsl(238, 29%, 16%);
+    /*set height to 100% to match wrapper height*/
+    height: 100%; max-height: 100%; min-height: 100%;
+    /*set font to google font embedded in html*/
     font-family: 'Kumbh Sans', sans-serif;
-    line-height: 1.5;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    margin: 0 auto;
-    display: flex; justify-content: center; align-content: center; align-items: center;
-    flex-direction: column;
+    /*set line-height*/
+    line-height: 2;
 }
-h1 { font-size: 2rem; margin: 0 0 1em 0; }
 
-/***WARPPER***/
+
+
+/***WRAPPER***/
 #wrapper {
-    /*center wrapper*/ /*display: block; margin: 0 auto;*/
+    /*add gradient background colour*/
+    background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%))no-repeat;
+    /*set height to 100%*/
+    height: 100%; max-height: 100%; min-height: 100%;
+    /*use display flex to center the divs within - faq, attribution*/
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+
+
+/**FAQ Div**/
+.faq {
+    background: #fff;
+    width: 70vw; border-radius: 20px;
+    /*center div*/
+    margin: 0 auto;
+    /*display the two divs within in a row*/
     display: flex; flex-direction: row;
-    width: 920px;
-    background-color: #fff;
-    border-radius: 20px;
-}
-
-
-/**Accordion**/
-
-/*Accordion Function*/
-.answer p {
-    /*hide answers*/ opacity: 0; height: 0; margin: 0;
-}
-input[type=checkbox]:checked + .answer p {
-    /*show answers*/ opacity: 1; height: 100%;
-    /*add transition*/ transition: all, 1s;
-}
-
-/*Accordion Styling*/
-/*accordion div*/
-.accordion {
-    padding: 75px 0 85px 2em;
+    /*center the divs within the faq div*/
+    justify-content: center; align-items: center;
+    /*add position relative for box illustration*/
     position: relative;
 }
-/*checkbox styling*/
-input[type=checkbox] {
-    visibility: hidden; height: 12px;
-}
-/*new checkbox style*/
-.new-checkbox {
-    content: ''; display: block;
-    position: absolute; right: 0px;
-    background: url(../images/icon-arrow-down.svg)no-repeat;
-    background-size: 100%;
-    width: 12px; height: 12px;
-    transition: all, .5s;
-}
-input[type=checkbox]:checked input[type=checkbox]:after {
-    transform: rotate(180deg);
-}
-/*label when checked*/
-input[type=checkbox]:checked > label {
-    font-weight: 700;
-}
-label {
-    font-size: 1rem; font-weight: 400;
-    transition: all, .5s;
-}
-label:hover { color: hsl(14, 88%, 65%); cursor: pointer; }
-/*divider*/
-.divider {
-    display: block; margin: 1em 0;
-    background: hsl(240, 5%, 91%);
-    height: 1px; width: 100%;
+/*Box Illustration*/
+.faq:before {
+    /*display box illustration*/
+    content: '';
+    background: url(../images/illustration-box-desktop.svg);
+    display: block; width: 190px; height: 183px;
+    /*change position*/
+    position: absolute; bottom: 4em; left: -6em;
+    /*send to front*/
+    z-index: 1000;
 }
 
 /**Illustration**/
 .illust-wrap {
-    width: 45%;
-    background: url(../images/bg-pattern-desktop.svg)no-repeat;
-    background-size: cover;
-    background-position: -200px 30px;
+    width: 90%; height: 100%;
+    /*add bg illustration*/ background: url(../images/bg-pattern-desktop.svg)no-repeat;
+    background-size: 60em;
+    background-position: -37em -18em;
+    /*set overflow to hidden to hide part of the image*/
+    overflow: hidden;
 }
+/*hide mobile illustration*/ .illust-mobile { display: none; }
+/*position illustration*/
 .illust {
-    display: block;
-    background: url(../images/illustration-woman-online-desktop.svg);
-    width: 500px;
+    margin-top: 6em;
+    margin-left: -5em;
+}
+
+/**Accordion**/
+.accordion {
+    /*add paddings to the div*/
+    padding: 2em;
+}
+.qna {
+    /*add position relative for arrows*/
+    position: relative;
+}
+/*Heading*/
+h1 {
+    margin: 0 0 .5em .3em;
+    font-size: 2rem; font-weight: 700;
+}
+/*Checkbox Styling*/
+input {
+    /*hide default checkbox*/ visibility: hidden;
+    /*increase height to make lables easier to click*/ height: 20px;
+    /*reduce width to hide the checkbox space*/ width: 0;
+}
+/*Label Styling*/
+label {
+    font-size: 1rem; font-weight: 400;
+    /*add transition*/ transition: all, .5s;
+}
+label:hover { color: hsl(14, 88%, 65%); cursor: pointer; }
+/*add arrow icon*/
+label::after {
+    /*indicate there will be content*/ content: '';
+    /*display content beside the label*/ display: inline-block;
+    /*set width and height to display content*/ width: 10px; height: 7px;
+    /*add arrow*/ background: url(../images/icon-arrow-down.svg)no-repeat;
+    /*rotate arrow*/ transform: rotate(-90deg);
+    /*add transition*/ transition: all, .5s;
+    /*position arrows*/
+    position: absolute; right: 4em;
+    margin-top: 1em;
+}
+/*Answer*/
+.answer{
+    width: 80%;
+    margin: .1em 0 0 .8em;
+}
+/*Divider*/
+.divider {
+    /*show divider*/ display: block; margin: .5em 0;
+    /*set colour*/ background: hsl(240, 5%, 91%);
+    /*set thickness and width*/ height: 1px; width: 90%;
+}
+
+/*Accordion Function*/
+.answer{
+    /*hide answers*/ opacity: 0; max-height: 0;
+    /*add transition*/ transition: all, .5s;
+}
+input:checked + label {
+    font-weight: 700;
+}
+input:checked + label::after {
+    transform: rotate(0deg);
+    margin-top: .8em;
+}
+input:checked ~ .answer {
+    /*show answers*/ opacity: 1; max-height: 100%;
+    /*add transition*/ transition: all, .5s;
+}
+
+
+/**Attribution**/
+.attribution { text-align: center; width: 80%; }
+
+
+
+/***MEDIA QUERIES***/
+@media screen and (max-width: 1300px) {    
+    /**FAQ Div**/
+    .faq {
+        /*increase width to prevent overlap & overflow*/
+        width: 80vw;
+    }
+    /*Box Illustration*/
+    .faq:before {
+        /*change position*/
+        bottom: 6em;
+    }
+    
+    /**Accordion**/
+    /*arrow positioning*/
+    label::after { right: 4em; }
+    
+    /**Illustration**/
+    .illust-wrap {
+        width: 100%;
+        background-position: -38em -18em;
+    }
+    .illust {
+        /*set margin to percentage for flexibility*/
+        position: relative;
+        bottom: 3em;
+    }
+}
+@media screen and (max-width: 1100px) {
+    /**FAQ Div**/
+    .faq {
+        /*add margin to make space for the illustration*/
+        margin-top: 15vw;
+        /*display the two divs within in column*/
+        flex-direction: column;
+        /*center the divs within*/
+        align-content: center;
+    }
+    /*Box Illustration*/
+    .faq:before { /*hide box illustration*/ display: none; }
+    
+    /**Accordion**/
+    .accordion { /*adjust spacing*/ padding: 0 2em 2em; }
+    h1 { /*center header*/ text-align: center; }
+    label::after { /*arrow positioning*/ right: 0em; }
+    /*Answer*/
+    .answer{
+        /*increase width*/
+        width: 90%;
+    }
+    /*Divider*/
+    .divider {
+        /*set thickness and width*/ height: 1px; width: 100%;
+    }
+    
+    /**Illustration**/
+    .illust-wrap {
+        width: 100%; height: 150px;
+        background-size: 15em;
+        background-position: center -6.5em;
+        /*set overflow to visible*/
+        overflow: visible;
+        /*add position relative for mobile illustration*/
+        position: relative;
+    }
+    /*hide desktop illustration*/.illust { display: none; }
+    /*mobile illustration*/
+    .illust-mobile {
+        /*show illustration*/ display: block;
+        width: 266px;
+        position: absolute; top: -5em;
+        right: 0; left: 0; margin: 0 auto;
+    }
+}
+@media screen and (max-width: 812px) {
+    .faq { margin-top: 15vw; width: 90%; }
+    .accordion { padding: 0 1em 1em; }
+    label::after { /*arrow positioning*/ right: .5em; }
+}
+@media screen and (max-width: 414px) {
+    #wrapper { padding: 2em 1em; }
+    .faq { margin-top: 25vw; width: 100%; }
+    /*Label Styling*/
+    label, .answer {
+        /*reduce font size*/
+        font-size: .7rem;
+    }
 }
